@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruds</title>
+
+
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/css.css">
+</head>
+<body>
+
+    <hr><hr><hr>
+    <header>
+        <div class="p-5">
+            <div class="container">
+                <h1 class="fw-bolder text-center py-4">Product Management System</h1>
+    
+                <label for="nameProduct" class="fw-bolder mt-4">Product name: </label>
+                <input oninput="validationName()" id="productName" type="text" class="is-invalid form-control textInput" name="name" placeholder="Enter a Product Name">
+                
+                <label for="Price" class="fw-bolder mt-4">Product Price: </label>
+                <input oninput="validationPrice()" id="productPrice" type="text" class="is-invalid form-control textInput" name="Price" placeholder="Enter a Product Price">
+                
+                <label for="Category" class="fw-bolder mt-4">Product Category: </label>
+                <input oninput="validationCategory()" id="productCategory" type="text" class="is-invalid form-control textInput" name="Category" placeholder="Enter a Product Category">
+                
+                <label for="Desc" class="fw-bolder mt-4">Product Description: </label>
+                <textarea oninput="validationDescription()" id="productDescription" type="text" class="is-invalid form-control textInput" name="Description"></textarea>
+                
+                
+                <div class="text-center my-5">
+                    <!-- Adding -->
+                    <button onclick="addition()" id="addProduct" class="fw-bolder my-4 px-5 py-2 btn btn-outline-light rounded-3">Add Product</button>
+
+                    
+                    <!-- Edit -->
+                    <button onclick="edit()" id="editProduct" class="d-none fw-bolder my-4 px-5 py-2 btn btn-outline-info rounded-3">Edit Product</button>
+                    <button onclick="cancel()" id="cancelEdit" class="d-none fw-bolder my-4 px-5 py-2 btn btn-outline-danger rounded-3">Cancel</button>
+                </div>
+            </div>
+
+
+            <!-- Search -->
+            <div class="d-flex justify-content-center">
+                <input oninput="search(this.value)" type="text" class="form-control my-5 w-50 textInput" placeholder="Search Bar">
+            </div>
+
+            
+            <!-- Table -->
+            <div class="container">
+                <table aria-describedby="Adding" class="t-table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody id="tableBody"></tbody>
+
+                </table>
+
+                <!-- clear all -->
+                <div class="d-flex justify-content-center">
+                    <button id="clearAll" onclick="clearAllData()" class="d-none btn btn-outline-danger mt-5 px-5">Clear All</button>
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    
+    <!-- Copyright -->
+    <hr>
+    <div class="text-center">
+        <p>Made with ❤️ by <a href="https://github.com/a7mednazeer"><b>Ahmed Nazeer</b></a></p>
+    </div>
+    <hr><hr>
+    
+
+    <script src="JS/js.js"></script>
+</body>
+</html>
